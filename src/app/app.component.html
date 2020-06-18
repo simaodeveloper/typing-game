@@ -1,20 +1,22 @@
-<div class="container columns is-centered has-text-centered">
-  <div class="card column is-half">
-    <div class="card-content">
-      <h1 class="title is-4">Typing Game</h1>
-      <p>
-        <span [class]="getClass(letter, enteredText[i])"
-          *ngFor="let letter of phrase.split(''); let i = index">{{ letter }}</span>
-      </p>
+<div class="container">
+  <div class="columns is-centered has-text-centered">
+    <div class="card column is-half">
+      <div class="card-content">
+        <h1 class="title is-4">Typing Game</h1>
+        <p>
+          <span [class]="getClass(letter, enteredText[i])"
+            *ngFor="let letter of phrase.split(''); let i = index">{{ letter }}</span>
+        </p>
 
-      <div class="field mt-2">
-        <div class="control">
-          <input type="text" (input)="onInput($event.target.value)" class="input">
+        <div class="field mt-2">
+          <div class="control">
+            <input type="text" (input)="onInput($event.target.value)" class="input">
+          </div>
         </div>
-      </div>
 
-      <div *ngIf="enteredText === phrase" class="box">
-        <h1 class="title">Success!</h1>
+        <div *ngIf="enteredText === phrase" class="box">
+          <h1 class="title">Success!</h1>
+        </div>
       </div>
     </div>
   </div>
